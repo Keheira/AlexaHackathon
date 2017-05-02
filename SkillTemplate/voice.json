@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GETPLAN",
+      "samples": [
+        "Start exercising for {minutes} minutes ",
+        "Get an excursive plan for {minutes} minutes "
+      ],
+      "slots": [
+        {
+          "name": "minutes",
+          "type": "AMAZON.NUMBER",
+          "samples": []
+        }
+      ]
+    }
+  ]
+}

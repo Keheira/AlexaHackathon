@@ -1,15 +1,16 @@
 'use strict';
 var Alexa = require('alexa-sdk');
 
-var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
-var SKILL_NAME = null; //replace
+var APP_ID = ''; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var SKILL_NAME = 'Exercise'; //replace
+var defaultWorkoutTime = 5;
 
-/**
- * Array containing space facts.
- */
-var FACTS = [
-    //put in facts
-];
+function buildWorkOut(minutes) {
+    
+    
+    
+}
+
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -20,20 +21,12 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('GetFact');
+        this.emit('GETPLAN');
     },
-    'GetNewStatementIntent': function () {
-        this.emit('GetFact');
-    },
-    'GetFact': function () {
-        // Get aexcercise from the list
-        var factIndex = Math.floor(Math.random() * FACTS.length);
-        var randomFact = FACTS[factIndex];
-
-        // Create speech output
-        var speechOutput = randomFact;
-
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+    'GETPLAN': function () {
+    var minutes = this.event.request.type == 'LaunchRequest' || this.event.request.intent.slots.minutes.value === undefined ? defaultWorkoutTime : parseInt(this.event.request.intent.slots.minutes.value);
+        //buildWorkOut();
+    this.emit(':tell', 'Here is a ' + minutes  + ' minute workout.');
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = "Need a break? You can set a time to workout.";
@@ -45,5 +38,9 @@ var handlers = {
     },
     'AMAZON.StopIntent': function () {
         this.emit(':tell', 'Ok!');
+    },
+    
+    'Unhandled': function() {
+        this.emit(':ask', 'Sorry, I didn\'t get that. Try asking for a X minute workout');
     }
 };
