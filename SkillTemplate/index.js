@@ -68,7 +68,11 @@ Ex: 30: {["10 Pushups", "30 Situps"]}
 
 */
 var excerciseTimes = {
+    10: {list: ["10 second plank"]},
+    20: {list: ["20 second plank"]},
     30: {list: ["10 pushups"]},
+    40: {list: ["40 second plank"]},
+    50: {list: ["50 second plank"]},
     60: {list: ["20 pushups"]},
     90: {list: ["30 pushups"]},
     120: {list: ["40 pushups"]}, 
@@ -76,7 +80,6 @@ var excerciseTimes = {
 };
 
 var excercise = [
-    "10 pushups",
     "15 jumping jacks",
     "10 crunches",
     "10 dead bugs",
