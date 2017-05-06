@@ -58,7 +58,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
 /*
 This object contains a list of excercises for a given number of seconds. Each group of seconds
 can have an array of excercises. You can then find a random in each group using getRandomInt(1. 30.length)
@@ -78,6 +77,7 @@ var excerciseTimes = {
     120: {list: ["40 pushups"]}, 
     150: {list: ["50 pushups"]},
 };
+
 
 var excercise = [
     "15 jumping jacks",
@@ -120,6 +120,6 @@ var handlers = {
     },
     
     'Unhandled': function() {
-        this.emit(':ask', 'Sorry, I didn\'t get that. Try asking for a X minute workout');
+        this.emit(':ask', 'Sorry, I didn\'t get that. Try asking for a 5 minute workout');
     }
 };
