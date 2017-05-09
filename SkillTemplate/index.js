@@ -31,6 +31,7 @@ function buildWorkOut(minutes) {
 
     }
 
+    return excerciseSpeech
     console.log(excerciseSpeech);
 }
 
@@ -70,15 +71,15 @@ var excerciseTimes = {
     10: {list: ["10 second plank"]},
     20: {list: ["20 second plank"]},
     30: {list: ["10 pushups"]},
-    40: {list: ["40 second plank"]},
-    50: {list: ["50 second plank"]},
-    60: {list: ["20 pushups"]},
-    90: {list: ["30 pushups"]},
-    120: {list: ["40 pushups"]}, 
-    150: {list: ["50 pushups"]},
+    40: {list: ["10 second plank", "10 pushups"]},
+    50: {list: ["10 pushups", "20 second plank"]},
+    60: {list: ["30 second plank", "10 pushups"]},
+    90: {list: ["10 second plank", "10 pushups", "10 jumping jacks", "10 crunches"]},
+    120: {list: ["10 pushups", "20 second plank", "20 jumping jacks", "20 crunches"]}, 
+    150: {list: ["30 second plank", "10 pushups", "30 jumping jacks", "30 crunches"]},
 };
 
-
+//to be more rebust later
 var excercise = [
     "15 jumping jacks",
     "10 crunches",
