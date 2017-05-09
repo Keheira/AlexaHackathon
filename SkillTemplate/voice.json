@@ -16,7 +16,7 @@
       "name": "GETPLAN",
       "samples": [
         "Start exercising for {minutes} minutes ",
-        "Get an excursive plan for {minutes} minutes "
+        "Get an exercise plan for {minutes} minutes "
       ],
       "slots": [
         {
